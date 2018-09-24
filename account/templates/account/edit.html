@@ -5,6 +5,13 @@
 {% block dash_content %}
   <div class="col-sm-9">
     <h1>Edit your account</h1>
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
   <p>You can edit your account using the following form:</p>
   {% load avatar_tags %}
   {% avatar user 80 %}

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile, Program
+from .models import Profile, Program, ValidUser
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -8,8 +8,8 @@ class LoginForm(forms.Form):
 
 class UserEditForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('username', 'email')
+        model = ValidUser
+        fields = ('first_name', 'last_name')
 
 class UploadFileForm(forms.Form):
     names = []
@@ -25,7 +25,7 @@ class ProfileEditForm(forms.ModelForm):
     date_of_birth = forms.DateField(help_text='Required.Format: MM-DD-YYYY')
     class Meta:
         model = Profile
-        fields = ('first_name','last_name','email','date_of_birth', 'photo')
+        fields = ('date_of_birth', 'photo')
 
 class ProgramForm(forms.ModelForm):
     class Meta:

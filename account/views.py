@@ -8,6 +8,7 @@ from .models import ValidUser
 from io import TextIOWrapper, StringIO
 
 
+
 import csv, string, random
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -154,9 +155,13 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            return HttpResponse('Profile updated successfully!')
+            #return HttpResponseRedirect('Profile updated successfully!')
+            messages.success(request, ('Your profile was updated successfully.'))
+            print("hi")
+            #return render(request,'account/dashboard.html')
         else:
-            return HttpResponse('Error updating your profile!')
+            messages.error(request,('Please correct the error below.'))
+            #return HttpResponse('Error updating your profile!')
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
@@ -164,7 +169,6 @@ def edit(request):
                   'account/edit.html',
                   {'user_form': user_form,
                    'profile_form': profile_form})
-
 
 
 @login_required
