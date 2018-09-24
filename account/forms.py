@@ -25,7 +25,7 @@ class ProfileEditForm(forms.ModelForm):
     date_of_birth = forms.DateField(help_text='Required.Format: MM-DD-YYYY')
     class Meta:
         model = Profile
-        fields = ('date_of_birth', 'photo')
+        fields = ('date_of_birth',)
 
 class ProgramForm(forms.ModelForm):
     class Meta:
