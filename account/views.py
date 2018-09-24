@@ -53,10 +53,11 @@ def createprogram(request):
             program= form.save(commit=False)
             #program.created_date = timezone.now()
             program.save()
-            #messages.success(request,' Profile added successfully')
-            return HttpResponse('Program added successfully!')
+            messages.success(request,' Program added successfully')
+            #return HttpResponse('Program added successfully!')
         else:
-            return HttpResponse('Error updating your profile!')
+            messages.error(request, ('Error updating program'))
+            #return HttpResponse('Error updating your profile!')
     else:
         form = ProgramForm()
         print("Else")
@@ -157,7 +158,7 @@ def edit(request):
             profile_form.save()
             #return HttpResponseRedirect('Profile updated successfully!')
             messages.success(request, ('Your profile was updated successfully.'))
-            print("hi")
+            #print("hi")
             #return render(request,'account/dashboard.html')
         else:
             messages.error(request,('Please correct the error below.'))
