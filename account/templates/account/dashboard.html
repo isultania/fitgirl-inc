@@ -21,9 +21,9 @@
                 <div>
                       <div class="list-group">
                           <a href="#"  id ="test1" id="dashboard" class="list-group-item list-group-item-action  main-color-bg">Dashboard</a>
-                          <a href="{% url "createprogram" %}" id="createProgram" class="list-group-item list-group-item-action"><i class="fas fa-edit fa-fw"></i> Create Program </a>
-                          <a href="{% url "registerusers" %}" id="registerUsers" class="list-group-item list-group-item-action"><i class="fas fa-plus-circle fa-fw"></i> Register Users </a>
-                          <a href="{% url "users" %}" id="users" class="list-group-item list-group-item-action">  <i class="fas fa-female fa-fw"></i> Users </a>
+                          <a href="{% url 'createprogram' %}" id="createProgram" class="list-group-item list-group-item-action"><i class="fas fa-edit fa-fw"></i> Create Program </a>
+                          <a href="{% url 'registerusers' %}" id="registerUsers" class="list-group-item list-group-item-action"><i class="fas fa-plus-circle fa-fw"></i> Register Users </a>
+                          <a href="{% url 'users' %}" id="users" class="list-group-item list-group-item-action">  <i class="fas fa-female fa-fw"></i> Users </a>
                           <!--<a href="#" id="Settings" class="list-group-item list-group-item-action"><i class="fas fa-cog"></i>  Settings </a>-->
                           <!--<a href="{% url "password_change" %}" id="changePassword" class="list-group-item list-group-item-action">Change Password</a>-->
                       </div>
@@ -31,10 +31,10 @@
             {% else %}
                 <div>
                       <div class="list-group">
-                          <a href="#" class="list-group-item list-group-item-action  main-color-bg">Dashboard</a>
-                          <a href="{% url "myprogram" %}" class="list-group-item list-group-item-action"><i class="fas fa-edit fa-fw"></i> My Program</a>
+                          <a href="{% url 'userdashboard' %}" class="list-group-item list-group-item-action  main-color-bg">Dashboard</a>
+                          <a href="{% url 'myprogram' %}" class="list-group-item list-group-item-action"><i class="fas fa-edit fa-fw"></i> My Program</a>
                           <!--<a href="{% url "password_change" %}" class="list-group-item list-group-item-action">Change Password</a>-->
-                          <a href="{% url "edit" %}" class="list-group-item list-group-item-action"><i class="fas fa-cog fa-fw"></i> Edit Profile</a>
+                          <a href="{% url 'edit' %}" class="list-group-item list-group-item-action"><i class="fas fa-cog fa-fw"></i> Edit Profile</a>
                       </div>
                       <!--<div class="card" style="width: 18rem;">-->
                         <!--<div class="card-body">-->

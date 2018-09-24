@@ -40,8 +40,14 @@ def user_login(request):
 @login_required
 def dashboard(request):
     return render(request,
-                  'account/dashboard.html',
+                  'account/userdashboard.html',
                   {'section': 'dashboard'})
+
+@login_required
+def userdashboard(request):
+    return render(request,
+                  'account/userdashboard.html',
+                  {'section': 'userdashboard'})
 
 @login_required
 def createprogram(request):
