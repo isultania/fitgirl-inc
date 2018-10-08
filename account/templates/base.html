@@ -39,7 +39,7 @@
           </li>
            {% if request.user.is_superuser %}
           <li class="nav-item ">
-            <a class="nav-link hoverable " href="#">Users</a>
+            <a class="nav-link hoverable " href="{% url 'users' %}">Users</a>
           </li>
          {% else %}
             <li class="nav-item ">
